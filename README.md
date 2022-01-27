@@ -17,7 +17,7 @@
 
 ## Ecuacion Haversine
 
-> $$2r\sin-1\(\sqrt{(\sin\({(fi1 - fi2)/2})^2 +cos({fi1}) * cos({fi2})* (\sin\(({fi1 - fi2)/2})^2 \})$$
+![](https://user-images.githubusercontent.com/2789198/27240436-e9a459da-52d4-11e7-8f84-f96d0b312859.png)
 
 # Second Exercice
 ## Library
