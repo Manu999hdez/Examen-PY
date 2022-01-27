@@ -1,19 +1,19 @@
 #Importamos la libreria solicitada usar en este ejercicio
 import argparse
 #Importamos la libreria para funciones trigonometricas y matematicas
-import math
+from math import sin,cos,asin,sqrt,pi
 
 #Funcion para el calculo de la distancia, parametros latitud y longitud
 def distancia(lat1, lon1, lat2, lon2):
     #convirtiendo angulos a radianes
-    fi1 = lat1 * ((math.pi)/180)
-    fi2 =  lat2 * ((math.pi)/180)
-    delta_lat = (lat2 - lat1) * ((math.pi)/180)
-    delta_lon = (lon2 - lon1) * ((math.pi)/180)
+    fi1 = lat1 * ((pi)/180)
+    fi2 =  lat2 * ((pi)/180)
+    delta_lat = (lat2 - lat1) * ((pi)/180)
+    delta_lon = (lon2 - lon1) * ((pi)/180)
     #Calculando la distancia
-    haversine1 = ((math.sin(delta_lat/2))**(2)) + (math.cos(fi1) * math.cos(fi2) * ((math.sin(delta_lon/2))**(2)))
-    haversine2 = math.sqrt(haversine1)
-    haversine3 = 2 * math.asin(haversine2)
+    haversine1 = ((sin(delta_lat/2))**(2)) + (cos(fi1) * cos(fi2) * ((sin(delta_lon/2))**(2)))
+    haversine2 = sqrt(haversine1)
+    haversine3 = 2 * asin(haversine2)
     #Utilice el valor de distancia de la tierra en KM
     dis = 6371 * haversine3
     return dis
@@ -34,4 +34,4 @@ parser.add_argument("lon2", type=float, help="para la segunda longitud")
 args = parser.parse_args()
 #Referenciamos estos valores como parametros para la funcion
 valores = distancia(args.lat1,args.lon1,args.lat2,args.lon2)
-print ("La distancia es: ","{0:.3f}".format(valores))
+print ("La distancia es: ","{0:.3f}".format(valores),"Kilometros")

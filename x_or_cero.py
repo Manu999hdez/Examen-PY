@@ -1,7 +1,7 @@
 import numpy as np
 ganador = None
 
-def quien_gana(game):
+def detect_winner(game):
   global winner 
   diagonales = diagonal()
   filas = fila()
